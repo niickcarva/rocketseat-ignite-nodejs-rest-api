@@ -3,7 +3,10 @@ import { env } from "./env";
 import { transactionsRoutes } from "./routes/transactions";
 
 const app = fastify();
-app.register(transactionsRoutes);
+
+app.register(transactionsRoutes, {
+  prefix: "/transactions",
+});
 
 app
   .listen({
